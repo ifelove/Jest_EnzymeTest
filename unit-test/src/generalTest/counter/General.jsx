@@ -20,7 +20,7 @@ setCounter( prev - 1);
         <button data-testid="decrement" onClick={() => decrease(counter)}>
           Prev{" "}
         </button>
-        <span data-testid="counter"> {counter}</span>
+        <span data-testid="counter">{counter}</span>
         <button data-testid="increment" onClick={() => increase(counter)}>
           Next{" "}
         </button>
