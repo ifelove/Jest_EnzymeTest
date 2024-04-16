@@ -17,11 +17,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Print current directory
-      run: pwd
-    - name: List files in current directory
-      run: ls -la
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
@@ -29,5 +25,11 @@ jobs:
         cache-dependency-path: './unit-test/package-lock.json'
     - name: Navigate to unit-test directory
       run: cd unit-test || exit
-    - run: npm install
-    - run: npm run test
+    - name: Print current directory
+      run: pwd
+    - name: List files in current directory
+      run: ls -la
+    - name: Install dependencies
+      run: npm install
+    - name: Run tests
+      run: npm run test
