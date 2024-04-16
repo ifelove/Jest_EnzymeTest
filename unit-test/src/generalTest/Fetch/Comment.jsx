@@ -4,19 +4,18 @@ import axios from "axios";
 const Comment = () => {
   const [comment, setCommet] = React.useState([]);
 
-  React.useEffect( () => {
+  React.useEffect(() => {
+    const fetch = async () => {
+      const comments = await axios
+        .get("https://jsonplaceholder.typicode.com/comments")
+        .catch((err) => {
+          console.log(err);
+        });
+      setCommet(comments.data);
+    };
 
-    const fetch= async()=>{
-
- const comments = await axios.get(
-      "https://jsonplaceholder.typicode.com/comments"
-    ).catch((err)=>{console.log(err)});
-   setCommet(comments.data);
-    }
-    
-   fetch()
- 
-  },[]);
+    fetch();
+  }, []);
 
   return (
     <div>
@@ -24,12 +23,13 @@ const Comment = () => {
       <p>Getting comment from the server</p>
 
       <ul>
-        {comment.map((comment,index)=>{
-
-            return <li key={index} data-testid="comment">{comment?.name}</li>
+        {comment.map((comment, index) => {
+          return (
+            <p key={index} data-testid="comment">
+              {comment?.name}
+            </p>
+          );
         })}
-
-
       </ul>
     </div>
   );

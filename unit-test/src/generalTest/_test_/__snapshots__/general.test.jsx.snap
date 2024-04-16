@@ -11,7 +11,7 @@ exports[` counter snapshot It show matches DOM snapshot 1`] = `
       data-testid="decrement"
       onClick={[Function]}
     >
-      Prev
+      Prev Button
        
     </button>
     <span
@@ -23,7 +23,7 @@ exports[` counter snapshot It show matches DOM snapshot 1`] = `
       data-testid="increment"
       onClick={[Function]}
     >
-      Next
+      Next Button
        
     </button>
   </div>

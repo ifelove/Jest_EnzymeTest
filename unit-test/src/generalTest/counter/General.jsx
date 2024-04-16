@@ -4,11 +4,11 @@ const General = () => {
   const [counter, setCounter] = React.useState(1);
 
   const decrease = (prev) => {
-setCounter( prev - 1);
+    setCounter(prev - 1);
   };
 
   const increase = (prev) => {
- setCounter (prev + 1);
+    setCounter(prev + 1);
   };
 
   return (
@@ -18,11 +18,11 @@ setCounter( prev - 1);
       <div>
         {" "}
         <button data-testid="decrement" onClick={() => decrease(counter)}>
-          Prev{" "}
+          Prev Button{" "}
         </button>
         <span data-testid="counter">{counter}</span>
         <button data-testid="increment" onClick={() => increase(counter)}>
-          Next{" "}
+          Next Button{" "}
         </button>
       </div>
     </div>
