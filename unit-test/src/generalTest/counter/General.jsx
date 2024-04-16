@@ -17,9 +17,13 @@ setCounter( prev - 1);
 
       <div>
         {" "}
-        <button onClick={() => decrease(counter)}>Prev </button>
-        {counter}
-        <button onClick={() => increase(counter)}>Next </button>
+        <button data-testId="decrement" onClick={() => decrease(counter)}>
+          Prev{" "}
+        </button>
+        <span data-testId="counter"> {counter}</span>
+        <button data-testId="increment" onClick={() => increase(counter)}>
+          Next{" "}
+        </button>
       </div>
     </div>
   );
