@@ -14,7 +14,6 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
@@ -25,6 +24,6 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './unit-test/package-lock.json'
     - name: Navigate to unit-test directory
-      run: cd Jest_EnzymeTest/unit-test
+      run: cd Jest_EnzymeTest/unit-test || exit
     - run: npm install
     - run: npm run test
