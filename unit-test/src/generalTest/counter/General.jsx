@@ -1,7 +1,7 @@
 import React from "react";
 
 const General = () => {
-  const [counter, setCounter] = React.useState(0);
+  const [counter, setCounter] = React.useState(1);
 
   const decrease = (prev) => {
 setCounter( prev - 1);
@@ -17,11 +17,11 @@ setCounter( prev - 1);
 
       <div>
         {" "}
-        <button data-testId="decrement" onClick={() => decrease(counter)}>
+        <button data-testid="decrement" onClick={() => decrease(counter)}>
           Prev{" "}
         </button>
-        <span data-testId="counter"> {counter}</span>
-        <button data-testId="increment" onClick={() => increase(counter)}>
+        <span data-testid="counter"> {counter}</span>
+        <button data-testid="increment" onClick={() => increase(counter)}>
           Next{" "}
         </button>
       </div>
