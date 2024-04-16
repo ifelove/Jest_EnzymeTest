@@ -11,22 +11,13 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: './unit-test/package-lock.json'
-    - name: Navigate to unit-test directory
+    - uses: actions/checkout@v2
+      
     - name: Install dependencies
-      run: working-directory:"./unit-test/"
-       run:npm install
+      run: npm install
+      working-directory: ./unit-test  # Specify the working directory
+      
     - name: Run tests
-      run: npm run test
-       run:working-directory:"./unit-test/"
+      run: npm test
+      working-directory: ./unit-test  # Specify the working directory
