@@ -28,6 +28,6 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './unit-test/package-lock.json'
     - run: npm install
-    - working-directory: Jest_EnzymeTest/unit-test
+      working-directory: Jest_EnzymeTest/unit-test
     - run: npm run test
-    - working-directory: Jest_EnzymeTest/unit-test
+      working-directory: Jest_EnzymeTest/unit-test
