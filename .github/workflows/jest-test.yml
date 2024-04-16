@@ -24,7 +24,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './unit-test/package-lock.json'
+    - name: Navigate to unit-test directory
+      run: cd Jest_EnzymeTest/unit-test
     - run: npm install
-    - name: Run tests
-      run: npm run test
-      working-directory: Jest_EnzymeTest/unit-test  # Specify the working directory
+    - run: npm run test
