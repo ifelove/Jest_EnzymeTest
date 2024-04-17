@@ -1,23 +1,21 @@
 import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import UserForm from './UserForm';
+import UserInput from './UserInput';
+
 
 function App() {
+  const [users ,setUsers]=React.useState([])
+  const onUserAdd=(newUser)=>{
+setUsers([...users,newUser])
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <UserForm onUserAdd={onUserAdd}/>
+    <hr />
+    <UserInput users={users}/>
+    
     </div>
   );
 }
