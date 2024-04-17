@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  testing unit-test:
+  testing test:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,8 +15,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./unit-test # Specify the working directory
+        working-directory: ./test # Specify the working directory
 
       - name: Run tests
         run: npm test
-        working-directory: ./unit-test # Specify the working directory
+        working-directory: ./test # Specify the working directory
