@@ -18,7 +18,12 @@ describe("Testing the userform component", () => {
     const mockFunction = jest.fn();
     render(<UserForm onUserAdd={mockFunction} />);
 
-    const [inputName, inputEmail] = screen.getAllByRole("textbox");
+   // const [inputName, inputEmail] = screen.getAllByRole("textbox");
+ //  const  inputName=screen.getByRole('textbox',{name:/name/i})
+
+  //const inputEmail = screen.getByRole('textbox',{ name: / enter email/i });
+  const inputName=screen.getByTestId('name')
+  const inputEmail=screen.getByTestId('email')
 
     user.click(inputName);
     user.keyboard("me");

@@ -1,20 +1,22 @@
 import React from "react";
 
-const UserForm = ({onUserAdd}) => {
+const UserForm = ({ onUserAdd }) => {
   const [email, setEmail] = React.useState("");
   const [name, setName] = React.useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email, name);
-    onUserAdd({name,email})
+    onUserAdd({ name, email });
   };
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="">Name</label>
+        <label htmlFor="name">Name</label>
         <input
+          data-testid="name"
           type="name"
+          id="name"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
@@ -22,9 +24,11 @@ const UserForm = ({onUserAdd}) => {
         />
       </div>
       <div>
-        <label htmlFor="">Email</label>
+        <label htmlFor="email">Email</label>
         <input
+          data-testid="email"
           type="email"
+          id="email"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value);
