@@ -17,7 +17,7 @@ const UserInput = ({ users }) => {
         <th>Email</th>
       </tr>
     </thead>
-    <tbody>{renderUser}</tbody>
+    <tbody data-testid='users'>{renderUser}</tbody>
   </table>);
 };
 
