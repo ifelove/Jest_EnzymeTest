@@ -11,13 +11,15 @@ const users = [
   { name: "you", email: "you@gmail" },
 ];
 //render component
-render(<Userinput users={users}/>)
+const {container}=render(<Userinput users={users}/>)
 
-//find all rows in the table
+
 //screen.logTestingPlaygroundURL()
 
 
-const rows=within(screen.getByTestId('users')).getAllByRole("row")
+//const rows=within(screen.getByTestId('users')).getAllByRole("row")
+
+const rows=container.querySelectorAll("tbody tr")
 
 expect(rows).toHaveLength(2)
 
